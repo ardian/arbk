@@ -14,12 +14,14 @@ class ArbkBusinesscategory(models.Model):
     name = models.CharField(max_length=200, db_column=u'Name') # Field name made lowercase.
     class Meta:
         db_table = u'arbk_businesscategory'
+        verbose_name_plural = "BusinessCategories"
 
 class ArbkLegalentity(models.Model):
     id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=200, db_column=u'Name') # Field name made lowercase.
     class Meta:
         db_table = u'arbk_legalentity'
+        verbose_name_plural = "LegalEntities"
 
 class ArbkCompany(models.Model):
     id = models.IntegerField(primary_key=True)
@@ -36,6 +38,7 @@ class ArbkCompany(models.Model):
     primarycategory = models.ForeignKey(ArbkBusinesscategory, db_column=u'PrimaryCategory_id') # Field name made lowercase.
     class Meta:
         db_table = u'arbk_company'
+        verbose_name_plural = "Companies"
 
 class ArbkPerson(models.Model):
     id = models.IntegerField(primary_key=True)
@@ -43,6 +46,7 @@ class ArbkPerson(models.Model):
     name = models.CharField(max_length=200, db_column=u'Name') # Field name made lowercase.
     class Meta:
         db_table = u'arbk_person'
+        verbose_name_plural = "People"
 
 class ArbkCompanyAuthorizedpersons(models.Model):
     id = models.IntegerField(primary_key=True)
@@ -50,6 +54,7 @@ class ArbkCompanyAuthorizedpersons(models.Model):
     person = models.ForeignKey(ArbkPerson)
     class Meta:
         db_table = u'arbk_company_AuthorizedPersons'
+        verbose_name_plural = "AuthorizedPeople"
 
 class ArbkCompanyOwners(models.Model):
     id = models.IntegerField(primary_key=True)
@@ -57,6 +62,7 @@ class ArbkCompanyOwners(models.Model):
     legalentity = models.ForeignKey(ArbkLegalentity)
     class Meta:
         db_table = u'arbk_company_Owners'
+        verbose_name_plural = "Owners"
 
 class ArbkCompanySecondarycategories(models.Model):
     id = models.IntegerField(primary_key=True)
@@ -64,12 +70,7 @@ class ArbkCompanySecondarycategories(models.Model):
     businesscategory = models.ForeignKey(ArbkBusinesscategory)
     class Meta:
         db_table = u'arbk_company_SecondaryCategories'
-
-class ArbkCompanycategory(models.Model):
-    id = models.IntegerField(primary_key=True)
-    category = models.ForeignKey(ArbkBusinesscategory, db_column=u'Category_id') # Field name made lowercase.
-    class Meta:
-        db_table = u'arbk_companycategory'
+        verbose_name_plural = "SecondaryCategories"
 
 
 

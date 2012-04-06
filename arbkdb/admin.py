@@ -3,7 +3,6 @@ from arbkdb.models import ArbkCompany
 from arbkdb.models import ArbkCompanyAuthorizedpersons
 from arbkdb.models import ArbkCompanyOwners
 from arbkdb.models import ArbkCompanySecondarycategories
-from arbkdb.models import ArbkCompanycategory
 from arbkdb.models import ArbkLegalentity
 from arbkdb.models import ArbkPerson
 
@@ -15,6 +14,5 @@ admin.site.register(ArbkCompany)
 admin.site.register(ArbkCompanyAuthorizedpersons)
 admin.site.register(ArbkCompanyOwners)
 admin.site.register(ArbkCompanySecondarycategories)
-admin.site.register(ArbkCompanycategory)
 admin.site.register(ArbkLegalentity)
 admin.site.register(ArbkPerson)
