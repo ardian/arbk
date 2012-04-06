@@ -1,0 +1,11 @@
+
+
+create database arbk;
+
+mysql> grant all PRIVILEGES on arbk.* to 'arbk_user'@'localhost' identified by 'arbkpassword';
+
+run this to create the database
+python ./manage.py  syncdb
+
+run this to run the server
+python ./manage.py  runserver

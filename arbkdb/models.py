@@ -10,21 +10,18 @@
 from django.db import models
 
 class ArbkBusinesscategory(models.Model):
-    id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=200, db_column=u'Name') # Field name made lowercase.
     class Meta:
         db_table = u'arbk_businesscategory'
         verbose_name_plural = "BusinessCategories"
 
 class ArbkLegalentity(models.Model):
-    id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=200, db_column=u'Name') # Field name made lowercase.
     class Meta:
         db_table = u'arbk_legalentity'
         verbose_name_plural = "LegalEntities"
 
 class ArbkCompany(models.Model):
-    id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=200, db_column=u'Name') # Field name made lowercase.
     regnumber = models.IntegerField(unique=True, db_column=u'RegNumber') # Field name made lowercase.
     employsnumber = models.IntegerField(db_column=u'EmploysNumber') # Field name made lowercase.
@@ -41,7 +38,6 @@ class ArbkCompany(models.Model):
         verbose_name_plural = "Companies"
 
 class ArbkPerson(models.Model):
-    id = models.IntegerField(primary_key=True)
     personalid = models.CharField(max_length=40, db_column=u'PersonalID') # Field name made lowercase.
     name = models.CharField(max_length=200, db_column=u'Name') # Field name made lowercase.
     class Meta:
@@ -49,7 +45,6 @@ class ArbkPerson(models.Model):
         verbose_name_plural = "People"
 
 class ArbkCompanyAuthorizedpersons(models.Model):
-    id = models.IntegerField(primary_key=True)
     company = models.ForeignKey(ArbkCompany)
     person = models.ForeignKey(ArbkPerson)
     class Meta:
@@ -57,7 +52,6 @@ class ArbkCompanyAuthorizedpersons(models.Model):
         verbose_name_plural = "AuthorizedPeople"
 
 class ArbkCompanyOwners(models.Model):
-    id = models.IntegerField(primary_key=True)
     company = models.ForeignKey(ArbkCompany)
     legalentity = models.ForeignKey(ArbkLegalentity)
     class Meta:
@@ -65,12 +59,9 @@ class ArbkCompanyOwners(models.Model):
         verbose_name_plural = "Owners"
 
 class ArbkCompanySecondarycategories(models.Model):
-    id = models.IntegerField(primary_key=True)
     company = models.ForeignKey(ArbkCompany)
     businesscategory = models.ForeignKey(ArbkBusinesscategory)
     class Meta:
         db_table = u'arbk_company_SecondaryCategories'
         verbose_name_plural = "SecondaryCategories"
-
-
 
