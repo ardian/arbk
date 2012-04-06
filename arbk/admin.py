@@ -1,13 +1,20 @@
-from arbk.models import BusinessCategory
-from arbk.models import LegalEntity
-from arbk.models import Person
-from arbk.models import Company
-from arbk.models import CompanyCategory
+from arbk.models import ArbkBusinesscategory
+from arbk.models import ArbkCompany
+from arbk.models import ArbkCompanyAuthorizedpersons
+from arbk.models import ArbkCompanyOwners
+from arbk.models import ArbkCompanySecondarycategories
+from arbk.models import ArbkCompanycategory
+from arbk.models import ArbkLegalentity
+from arbk.models import ArbkPerson
+
 
 from django.contrib import admin
 
-admin.site.register(BusinessCategory)
-admin.site.register(LegalEntity)
-admin.site.register(Person)
-admin.site.register(Company)
-admin.site.register(CompanyCategory)
+admin.site.register(ArbkBusinesscategory)
+admin.site.register(ArbkCompany)
+admin.site.register(ArbkCompanyAuthorizedpersons)
+admin.site.register(ArbkCompanyOwners)
+admin.site.register(ArbkCompanySecondarycategories)
+admin.site.register(ArbkCompanycategory)
+admin.site.register(ArbkLegalentity)
+admin.site.register(ArbkPerson)

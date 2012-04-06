@@ -15,6 +15,12 @@ class ArbkBusinesscategory(models.Model):
     class Meta:
         db_table = u'arbk_businesscategory'
 
+class ArbkLegalentity(models.Model):
+    id = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=200, db_column=u'Name') # Field name made lowercase.
+    class Meta:
+        db_table = u'arbk_legalentity'
+
 class ArbkCompany(models.Model):
     id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=200, db_column=u'Name') # Field name made lowercase.
@@ -30,6 +36,13 @@ class ArbkCompany(models.Model):
     primarycategory = models.ForeignKey(ArbkBusinesscategory, db_column=u'PrimaryCategory_id') # Field name made lowercase.
     class Meta:
         db_table = u'arbk_company'
+
+class ArbkPerson(models.Model):
+    id = models.IntegerField(primary_key=True)
+    personalid = models.CharField(max_length=40, db_column=u'PersonalID') # Field name made lowercase.
+    name = models.CharField(max_length=200, db_column=u'Name') # Field name made lowercase.
+    class Meta:
+        db_table = u'arbk_person'
 
 class ArbkCompanyAuthorizedpersons(models.Model):
     id = models.IntegerField(primary_key=True)
@@ -58,16 +71,5 @@ class ArbkCompanycategory(models.Model):
     class Meta:
         db_table = u'arbk_companycategory'
 
-class ArbkLegalentity(models.Model):
-    id = models.IntegerField(primary_key=True)
-    name = models.CharField(max_length=200, db_column=u'Name') # Field name made lowercase.
-    class Meta:
-        db_table = u'arbk_legalentity'
 
-class ArbkPerson(models.Model):
-    id = models.IntegerField(primary_key=True)
-    personalid = models.CharField(max_length=40, db_column=u'PersonalID') # Field name made lowercase.
-    name = models.CharField(max_length=200, db_column=u'Name') # Field name made lowercase.
-    class Meta:
-        db_table = u'arbk_person'
 
