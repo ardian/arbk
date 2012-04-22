@@ -14,7 +14,8 @@ python ./manage.py  runserver
 #
 #
 #
-
+Here's the turorial
+http://django-admin-tools.readthedocs.org/en/latest/quickstart.html#quickstart
 
 wget https://bitbucket.org/izi/django-admin-tools/downloads/django-admin-tools-0.4.1.tar.gz
 
