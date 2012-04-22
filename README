@@ -9,3 +9,47 @@ python ./manage.py  syncdb
 
 run this to run the server
 python ./manage.py  runserver
+
+#Changing the admin theme
+#
+#
+#
+
+
+wget https://bitbucket.org/izi/django-admin-tools/downloads/django-admin-tools-0.4.1.tar.gz
+
+decompress it
+
+python django-admin-tools.py instasll
+
+
+add this to settings.py
+TEMPLATE_CONTEXT_PROCESSORS = (
+    # default template context processors
+    'django.core.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+
+    # django 1.2 only
+    'django.contrib.messages.context_processors.messages',
+
+    # required by django-admin-tools
+    'django.core.context_processors.request',
+)
+
+INSTALLED_APPS = (
+    'admin_tools',
+    'admin_tools.theming',
+    'admin_tools.menu',
+    'admin_tools.dashboard',
+    'django.contrib.auth',
+    'django.contrib.sites',
+    'django.contrib.admin'
+    # ...other installed applications...
+)
+
+python manage.py syncdb
+
+# Adding django-admin-tools to your urls.py
+Adding django-admin-tools to your urls.py file

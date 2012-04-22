@@ -14,5 +14,5 @@ urlpatterns = patterns('',
 url(r'^admin_tools/', include('admin_tools.urls')),
     # Uncomment the next line to enable the admin:
  url(r'^admin/', include(admin.site.urls)),
- url(r'^search/$', 'arbk.search.views.search'),
+# url(r'^search/$', 'arbk.search.views.search'),
 )
