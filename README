@@ -1,8 +1,7 @@
-
-
 create database arbk;
 
 mysql> grant all PRIVILEGES on arbk.* to 'arbk_user'@'localhost' identified by 'arbkpassword';
+see also settings.py
 
 run this to create the database
 python ./manage.py  syncdb
@@ -54,3 +53,5 @@ python manage.py syncdb
 
 # Adding django-admin-tools to your urls.py
 Adding django-admin-tools to your urls.py file
+
+
