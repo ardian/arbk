@@ -37,6 +37,7 @@ class ArbkCompany(models.Model):
     primarycategory = models.ForeignKey(ArbkBusinesscategory, db_column=u'PrimaryCategory_id') # Field name made lowercase.
     def __unicode__(self):
         return str(self.name)
+
     class Meta:
         db_table = u'arbk_company'
         verbose_name_plural = "Companies"
@@ -53,15 +54,8 @@ class ArbkPerson(models.Model):
 class ArbkCompanyAuthorizedpersons(models.Model):
     company = models.ForeignKey(ArbkCompany)
     person = models.ForeignKey(ArbkPerson)
-
-    list_display = ('get_company_name', 'get_company_telephone')
-    def get_company_name(self, obj):
-        return '%s'%(obj.company.name)
-    def get_company_telephone(self, obj):
-        return '%s'%(obj.company.telephone)
-
-#    def __unicode__(self):
-#        return (self.person.name2)
+    def __unicode__(self):
+        return (self.person.name2)
     class Meta:
         db_table = u'arbk_company_AuthorizedPersons'
         verbose_name_plural = "AuthorizedPeople"

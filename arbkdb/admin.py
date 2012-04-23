@@ -1,4 +1,3 @@
-
 from arbkdb.models import (ArbkBusinesscategory, ArbkCompany,
   ArbkCompanyAuthorizedpersons, ArbkCompanyOwners, ArbkCompanySecondarycategories,
   ArbkLegalentity, ArbkPerson)
@@ -29,7 +28,7 @@ class CompanyAuthorizedpersonsAdmin(admin.ModelAdmin):
             return '%s'%(obj.company.regnumber)
 
         def get_person_name(self, obj):
-            return '%s'%(obj.person.name)
+            return '%s'%(obj.person.name2)
 
 	search_fields = ['get_person_name', 'company__name','company__telephone','company__regnumber',
 	'company__addressstreet','company__addressstreetnumber', 'company__addresscity',
