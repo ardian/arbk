@@ -71,7 +71,7 @@ class CompanyOwnersAdmin(admin.ModelAdmin):
 
         def Person_Name(self, obj):
             return '%s'%(obj.legalentity.name)
-        list_display = ('Regnumber','Company_Name', 'Telephone','Person_Name', 'Employsnumber', 'Capital', 'Constitutiondate', 'City', 'Adressstreet', 'AdressNR', 'AdressPostcode', 'PrimaryCategory')
+        list_display = ('Regnumber','Company_Name', 'Telephone','Person_Name', 'Employsnumber', 'Capital', 'Constitutiondate', 'Adressstreet', 'PrimaryCategory')
 
         def Company_Name(self, obj):
             return '%s'%(obj.company.name)
@@ -84,14 +84,6 @@ class CompanyOwnersAdmin(admin.ModelAdmin):
 
         def Adressstreet(self, obj):
             return '%s'%(obj.company.addressstreet)
-
-        def AdressNR(self, obj):
-            return '%s'%(obj.company.addressstreetnumber)
-        def City(self, obj):
-            return '%s'%(obj.company.addresscity)
-
-        def AdressPostcode(self, obj):
-            return '%s'%(obj.company.addresspostcode)
         def PrimaryCategory(self, obj):
             return '%s'%(obj.company.primarycategory)
         def Employsnumber(self, obj):

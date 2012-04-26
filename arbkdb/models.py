@@ -39,7 +39,7 @@ class ArbkCompany(models.Model):
     primarycategory = models.ForeignKey(ArbkBusinesscategory, db_column=u'PrimaryCategory_id') # Field name made lowercase.
     owner = models.ForeignKey(ArbkLegalentity)
     def __unicode__(self):
-        return str(self.name)
+        return (self.name)
 
     class Meta:
         db_table = u'arbk_company'
